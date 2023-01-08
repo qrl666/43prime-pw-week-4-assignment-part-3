@@ -5,19 +5,21 @@ let basket = [];
 const maxItems = 5;
 
 function isFull(array) {
-  if (array.length < maxItems) {
+  if (array.length >= maxItems) {
+    return true;
+  } else {
     return false;
   }
-  return true;
 }
-console.log(isFull(basket));
+console.log("Is basket full? (Expect false)", isFull(basket));
 
 function addItem(item, array) {
-  if (isFull) {
+  if (isFull(array) == false) {
     array.push(item);
     return true;
+  } else {
+    return false;
   }
-  return false;
 }
 
 console.log(`Basket is ${basket}`);
@@ -65,6 +67,14 @@ console.log(
   addItem("cosmetic warts", basket)
 );
 console.log(`Basket is now ${basket}`);
+console.log("Here is a list of items in the basket:");
 listItems(basket);
 
-console.log(isFull(basket));
+console.log("Is basket full? (expect true)", isFull(basket));
+
+console.log(
+  "Adding silver knife (expect false)",
+  addItem("silver knife", basket)
+);
+console.log("Here is a list of items in the basket:");
+listItems(basket);
