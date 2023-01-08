@@ -78,3 +78,23 @@ console.log(
 );
 console.log("Here is a list of items in the basket:");
 listItems(basket);
+
+function removeItem(item, array) {
+  if (array.indexOf(item) >= 0) {
+    array.splice(array.indexOf(item), 1);
+    return item;
+  } else {
+    return null;
+  }
+}
+
+console.log(basket.indexOf("cosmetic warts"))
+
+console.log(
+  "Removing cosmetic warts, expect cosmetic warts:",
+  removeItem("cosmetic warts", basket)
+);
+console.log("Here is a list of items in the basket:");
+listItems(basket);
+
+console.log("Removing flowers, expect null:", removeItem("flowers", basket));
